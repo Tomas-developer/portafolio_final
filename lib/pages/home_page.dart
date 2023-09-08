@@ -30,8 +30,9 @@ class _BodyPage extends StatelessWidget {
     final provider = Provider.of<Model>(context);
 
     return Stack(children: [
+      
       Column(children: [
-        const MenuWidget(),
+         
         CustomPageView(),
       ]),
       Positioned(
@@ -41,9 +42,11 @@ class _BodyPage extends StatelessWidget {
             opacity: provider.currentPage == 0 ? 0 : 1,
             duration: const Duration(seconds: 1),
             child: IconButton(
+              color: colorText,
                 onPressed: () => provider.navigateTo = 0,
                 icon: const Icon(Icons.arrow_upward))),
-      )
+      ),
+      MenuWidget(),
     ]);
   }
 }
